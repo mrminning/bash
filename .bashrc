@@ -39,7 +39,7 @@ fi
 if [ "$SSH_TTY" ]
 then
     # .bashrc <date><revision>
-    echo ".bashrc 180427 on $OS $LINUXTYPE $VERSION"
+    echo ".bashrc 180921 on $OS $LINUXTYPE $VERSION"
 fi
 
 # Handle history
@@ -57,7 +57,7 @@ alias artisan='php artisan'
 alias behat='vendor/bin/behat --strict'
 alias dontask='unset SSH_ASKPASS'
 # shoot the fat ducks in your current dir and sub dirs
-alias ducks='du -ck | sort -nr | head'
+alias ducks='du -cks * | sort -nr | head'
 alias e='emacs -nw'
 alias gadd='git add'
 alias gbr='git branch'
