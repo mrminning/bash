@@ -76,14 +76,20 @@ alias gsus='git status'
 alias h='history'
 alias hg='history|grep '
 alias j='jobs -l'
-alias l.='ls -d .* --color=auto'
 alias la='ls -al'
-alias ll='ls -l --color=auto'
-alias ls='ls --color=auto'
-alias lt='ls -alrt --color=auto'
+alias l.='ls -d .*'
+alias ll='ls -l'
+alias lt='ls -alrt'
+
+if [ "$LINUXTYPE" == "macos" ]; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color=auto'
+fi
+
 alias m='less'
 alias mroe='less'
-alias p3='/usr/local/bin/python3.5'
+alias p3='/usr/local/bin/python3'
 alias ports='netstat -tulanp'
 alias tf='tail -f '
 alias wget='wget -c'
@@ -93,7 +99,7 @@ if [ "$PKGMGR" == "yum" ]; then
     alias update="yum update"
 elif [ "$PKGMGR" == "yum" ]; then
     alias install="sudo apt install"
-    alias update="sudo apt update && sudo apt upgrade"    
+    alias update="sudo apt update && sudo apt upgrade"
 fi
 
 unset SSH_ASKPASS
@@ -134,9 +140,9 @@ function maketar() { tar czf "${1%%/}.tar.gz"  "${1%%/}/"; }
 # Create a ZIP archive of a file or folder.
 function makezip() { zip -r "${1%%/}.zip" "$1" ; }
 
-function md() { 
-mkdir -p $1 
-cd $1 
+function md() {
+mkdir -p $1
+cd $1
 }
 
 function parse_git_branch() {
@@ -144,4 +150,3 @@ function parse_git_branch() {
 }
 
 export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
-
