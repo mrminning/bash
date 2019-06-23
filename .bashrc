@@ -55,6 +55,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias artisan='php artisan'
 alias behat='vendor/bin/behat --strict'
+alias chromecast='pactl load-module module-loopback'
 alias dontask='unset SSH_ASKPASS'
 # shoot the fat ducks in your current dir and sub dirs
 alias ducks='du -cks * | sort -nr | head'
