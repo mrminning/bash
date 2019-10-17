@@ -5,6 +5,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias artisan='php artisan'
 alias behat='vendor/bin/behat --strict'
+alias chromecast='pactl load-module module-loopback'
 alias dc='docker-compose'
 alias dontask='unset SSH_ASKPASS'
 # shoot the fat ducks in your current dir and sub dirs
@@ -32,12 +33,25 @@ alias l.='ls -d .*'
 alias ll='ls -l'
 alias lt='ls -alrt'
 alias ls='ls --color=auto'
+
+if [ "$LINUXTYPE" == "macos" ]; then
+    alias ls='ls -G'
+fi
+
 alias m='less'
 alias mroe='less'
 alias p3='/usr/local/bin/python3'
 alias ports='netstat -tulanp'
 alias tf='tail -f '
 alias wget='wget -c'
+
+if [ "$PKGMGR" == "yum" ]; then
+    alias install="yum install"
+    alias update="yum update"
+elif [ "$PKGMGR" == "yum" ]; then
+    alias install="sudo apt install"
+    alias update="sudo apt update && sudo apt upgrade"
+fi
 
 function bu() { cp "$1" "$1".bkp-`date +%y%m%dt%H%M%S`; }
 
@@ -79,9 +93,3 @@ function md() {
 mkdir -p $1
 cd $1
 }
-
-function parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-export PS1="\u@\h: \[\033[34m\]\w\[\033[00m\]\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
