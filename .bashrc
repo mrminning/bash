@@ -52,8 +52,8 @@ HISTFILESIZE=2000
 
 unset SSH_ASKPASS
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/bash/.bash_aliases ]; then
+    . ~/bash/.bash_aliases
 fi
 
 function parse_git_branch() {
