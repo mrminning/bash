@@ -43,6 +43,9 @@ if [ "$LINUXTYPE" == "macos" ]; then
 fi
 
 alias m='less'
+alias mci='mvn clean install'
+alias mct='mvn -P component-tests verify'
+alias mtf='mvn -P component-tests-fast verify'
 alias mroe='less'
 alias p3='/usr/local/bin/python3'
 alias ports='netstat -tulanp'
@@ -57,7 +60,7 @@ elif [ "$PKGMGR" == "yum" ]; then
     alias update="sudo apt update && sudo apt upgrade"
 fi
 
-function bu() { cp "$1" "$1".bkp-`date +%y%m%dt%H%M%S`; }
+function bu() { cp -a "$1" "$1".bkp-`date +%y%m%dt%H%M%S`; }
 
 function extract()
 {
@@ -96,4 +99,18 @@ function makezip() { zip -r "${1%%/}.zip" "$1" ; }
 function md() {
 mkdir -p $1
 cd $1
+}
+
+function mcisr()
+{
+    dir=${PWD##*/}
+    if [ "$dir" == "app" ]; then
+	cd ..
+    fi
+    mvn install
+    cd app && mvn spring-boot:run
+}
+
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/^* \(.*\)/ (\1)/'
 }
