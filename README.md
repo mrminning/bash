@@ -9,10 +9,10 @@ cd ~
 wget https://raw.githubusercontent.com/mrminning/bash/master/.bashrc
 ```
 
-Put this in .bashrc to only use aliases
+Put this in .bashrc to only use aliases, just below the **.bash_aliases**
 ```
-if [ -f ~/bash/.bash_aliases ]; then
-    . ~/bash/.bash_aliases
+if [ -f ~/bash/bash_aliases.sh ]; then
+    . ~/bash/bash_aliases.sh
 fi
 ```
 
