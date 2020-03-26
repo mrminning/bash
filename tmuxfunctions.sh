@@ -3,19 +3,19 @@
 # C-b q displays pane-numbers
 #
 # Expected to be run from within tmux
-# Setup a workspace for RESODOS
+# Setup a workspace for system
 # Top panels with resodos scripts
 # Bottom open logs
 function rswdl () {
     # Open 3 panes
     tmux3;
     # Goto commands
-    tmux send-keys "goto rswdl-server" C-m;
+    tmux send-keys "cd system" C-m;
     tmux select-pane -R;
-    tmux send-keys "goto rswdl-server" C-m;
+    tmux send-keys "cd system" C-m;
     # Goto logs
     tmux select-pane -D;
-    tmux send-keys "tf /vehicleservices/products/thirdparty/jboss/jboss-eap-6.4-vehicle-services-rswdl-server/log/server.log" C-m;
+    tmux send-keys "tf log/server.log" C-m;
     # Select pane 0
     tmux select-pane -t 0;
 
