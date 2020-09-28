@@ -25,6 +25,7 @@ alias glog=_glog
 alias gmer='git merge'
 alias gpll='git pull'
 alias gpsh='git push'
+alias gpshr='git push origin HEAD:refs/for/master'
 alias greb='git rebase origin/master'
 alias grebi='git rebase origin/master --interactive'
 alias gst='git stash'
