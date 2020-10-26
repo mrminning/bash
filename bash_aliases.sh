@@ -50,7 +50,7 @@ alias mct='mvn -P component-tests verify'
 alias mtf='mvn -P component-tests-fast verify'
 alias mroe='less'
 alias p3='/usr/local/bin/python3'
-alias ports='netstat -tulanp'
+alias ports='netstat -tulpan'
 alias tf='tail -f '
 alias wget='wget -c'
 
