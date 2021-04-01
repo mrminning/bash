@@ -13,6 +13,7 @@ alias ducks='du -cks * | sort -nr | head'
 alias e='emacs -nw'
 alias ec='emacsclient'
 alias gadd='git add'
+alias gapp='git apply'
 # Backup untracked files
 alias gback='git ls-files --others --exclude-standard -z|xargs -0 tar rvf' # filename.tar
 alias gbr='git branch'
