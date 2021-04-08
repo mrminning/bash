@@ -54,6 +54,7 @@ alias mtf='mvn -P component-tests-fast verify'
 alias mroe='less'
 alias p3='/usr/local/bin/python3'
 alias pg='ps -ef|grep'
+alias pip=pip3
 alias ports='netstat -tulpan'
 alias tf='tail -f '
 alias wget='wget -c'
