@@ -57,6 +57,7 @@ alias pg='ps -ef|grep'
 alias pip=pip3
 alias ports='netstat -tulpan'
 alias tf='tail -f '
+alias venvactivate="source .venv/bin/activate"
 alias wget='wget -c'
 
 if [ "$PKGMGR" == "yum" ]; then
