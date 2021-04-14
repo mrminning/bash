@@ -123,6 +123,10 @@ function parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/^* \(.*\)/ (\1)/'
 }
 
-function title {
-    echo -ne "\033]0;"$*"\007"
+function set-title() {
+  if [[ -z "$ORIG" ]]; then
+    ORIG=$PS1
+  fi
+  TITLE="\[\e]2;$*\a\]"
+  PS1=${ORIG}${TITLE}
 }
