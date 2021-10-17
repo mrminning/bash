@@ -4,6 +4,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias artisan='php artisan'
+alias bashaliases='source ~/bash/bash_aliases.sh'
 alias behat='vendor/bin/behat --strict'
 alias chromecast='pactl load-module module-loopback'
 alias dc='docker-compose'
@@ -48,8 +49,11 @@ if [ "$LINUXTYPE" == "macos" ]; then
 fi
 
 alias m='less'
-alias mci='mvn clean install'
-alias mct='mvn -P component-tests verify'
+#alias mci='mvn clean install'
+#alias mct='mvn -P component-tests verify'
+#alias mct='mvn verify -Pcomponent-tests -P \!update-tisp-dependencies,\!update-parent'
+alias mci='mvn clean install -P \!update-tisp-dependencies,\!update-parent'
+alias mct='mvn clean install -Pcomponent-tests,\!update-tisp-dependencies,\!update-parent'
 alias mtf='mvn -P component-tests-fast verify'
 alias mroe='less'
 alias p3='/usr/local/bin/python3'
@@ -57,6 +61,9 @@ alias pg='ps -ef|grep'
 alias pip=pip3
 alias ports='netstat -tulpan'
 alias tf='tail -f '
+alias tm-attach='tmux a -t'
+alias tm-ls='tmux ls'
+alias tm-new='tmux new -s'
 alias venvactivate="source venv/bin/activate"
 alias wget='wget -c'
 
