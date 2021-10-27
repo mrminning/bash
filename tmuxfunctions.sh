@@ -21,6 +21,15 @@ function rswdl () {
 
 }
 
+function tmux2() {
+    # Open 2 windows, end in top left #0, top right #1, bottom #2
+    if ! __checkTmux -eq 1; then
+       echo "Are you in tmux?"
+       return;
+    fi
+    tmux split-window -v;
+}
+
 function tmux3() {
     # Open 3 windows, end in top left #0, top right #1, bottom #2
     if ! __checkTmux -eq 1; then
@@ -48,8 +57,8 @@ function tmux4() {
 }
 
 function __checkTmux() {
-    if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
-       return 1
+    if [[ "$TERM" =~ "screen".* ]]; then
+       return 0
     fi
-    return 0
+    return 1
 }

@@ -21,3 +21,10 @@ fi
 cd ~
 wget https://raw.githubusercontent.com/mrminning/bash/master/.tmux.conf
 ```
+
+Put this in .bashrc to use tmuxfunctions.
+```
+if [ -f ~/bash/tmuxfunctions.sh ]; then
+    . ~/bash/tmuxfunctions.sh
+fi
+```
