@@ -21,6 +21,7 @@ alias gbr='git branch'
 alias gch='git checkout'
 alias gcom='git commit'
 alias gcoma='git commit --amend'
+alias gcoman='git commit --amend --no-edit'
 # Files in commit with the following id. Get commit id with glog
 alias gcomfiles='git diff-tree --no-commit-id --name-only -r '
 alias gdf='git diff'
