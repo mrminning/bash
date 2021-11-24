@@ -28,6 +28,7 @@ function tmux2() {
        return;
     fi
     tmux split-window -v;
+    tmux select-pane -t 0;
 }
 
 function tmux3() {
