@@ -66,7 +66,6 @@ alias tf='tail -f '
 alias tm-attach='tmux a -t'
 alias tm-ls='tmux ls'
 alias tm-new='tmux new -s'
-alias venvactivate="source venv/bin/activate"
 alias wget='wget -c'
 
 if [ "$PKGMGR" == "yum" ]; then
@@ -138,4 +137,14 @@ function set-title() {
   fi
   TITLE="\[\e]2;$*\a\]"
   PS1=${ORIG}${TITLE}
+}
+
+function venvactivate() {
+    if [ -d "venv" ]; then
+	source venv/bin/activate
+    elif [ -d ".venv" ]; then
+        source .venv/bin/activate
+    else
+        echo "venv not found"
+    fi
 }
