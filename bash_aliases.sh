@@ -9,6 +9,7 @@ alias bashaliases='source ~/bash/bash_aliases.sh'
 alias behat='vendor/bin/behat --strict'
 alias chromecast='pactl load-module module-loopback'
 alias dc='docker-compose'
+alias docker-clean='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 alias dontask='unset SSH_ASKPASS'
 # shoot the fat ducks in your current dir and sub dirs
 alias ducks='du -cks * | sort -nr | head'
