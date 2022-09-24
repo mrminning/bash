@@ -142,6 +142,15 @@ function set-title() {
   PS1=${ORIG}${TITLE}
 }
 
+function set-title-dir() {
+  if [[ -z "$ORIG" ]]; then
+    ORIG=$PS1
+  fi
+  dirname=${PWD##*/}
+  TITLE="\[\e]2;$dirname\a\]"
+  PS1=${ORIG}${TITLE}
+}
+
 function venvactivate() {
     if [ -d "venv" ]; then
 	source venv/bin/activate
