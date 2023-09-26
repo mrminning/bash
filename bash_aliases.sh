@@ -54,15 +54,16 @@ if [ "$LINUXTYPE" == "macos" ]; then
 fi
 
 alias m='less'
-#alias mci='mvn clean install'
-#alias mct='mvn -P component-tests verify'
+alias mci='mvn clean install'
+alias mct='mvn -P component-tests verify'
 #alias mct='mvn verify -Pcomponent-tests -P \!update-tisp-dependencies,\!update-parent'
 alias mcp='mvn clean package'
-alias mci='mvn clean install -P \!update-tisp-dependencies,\!update-parent'
-alias mct='mvn clean install -Pcomponent-tests,\!update-tisp-dependencies,\!update-parent'
 alias mrun='mvn -f app/ spring-boot:run'
 alias mtf='mvn -P component-tests-fast verify'
 alias mroe='less'
+alias nin='npm i'
+alias nrs='npm run start:local'
+alias nrt='npm run test'
 alias p3='/usr/local/bin/python3'
 alias pg='ps -ef|grep'
 alias pip=pip3
