@@ -79,7 +79,7 @@ alias wget='wget -c'
 if [ "$PKGMGR" == "yum" ]; then
     alias install="yum install"
     alias update="yum update"
-elif [ "$PKGMGR" == "yum" ]; then
+elif [ "$PKGMGR" == "apt" ]; then
     alias install="sudo apt install"
     alias update="sudo apt update && sudo apt upgrade"
 fi
