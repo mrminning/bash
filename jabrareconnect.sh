@@ -23,7 +23,7 @@ if [ "$connection_status" == "yes" ]; then
   bluetoothctl << EOF
   disconnect $device_address
 EOF
-  sleep 4
+  sleep 7
   echo "Connecting to $device_address..."
   status="connected"
   bluetoothctl << EOF
