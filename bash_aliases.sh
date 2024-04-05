@@ -4,6 +4,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias aliasg='alias|grep'
+alias aptin="sudo apt install"
+alias aptup="sudo apt update && sudo apt upgrade"
 alias artisan='php artisan'
 alias bashaliases='source ~/bash/bash_aliases.sh'
 alias bat='batcat'
@@ -92,13 +94,6 @@ alias tm-ls='tmux ls'
 alias tm-new='tmux new -s'
 alias wget='wget -c'
 
-if [ "$PKGMGR" == "yum" ]; then
-    alias install="yum install"
-    alias update="yum update"
-elif [ "$PKGMGR" == "apt" ]; then
-    alias install="sudo apt install"
-    alias update="sudo apt update && sudo apt upgrade"
-fi
 
 function bu() { cp -a "$1" "$1".bkp-`date +%y%m%dt%H%M%S`; }
 
