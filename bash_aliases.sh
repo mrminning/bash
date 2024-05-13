@@ -34,6 +34,7 @@ alias gfet='git fetch'
 alias glog=_glog
 alias gmer='git merge'
 alias gpll='git pull'
+alias gpllr='git pull --rebase'
 alias gpsh='git push'
 alias gpshr='git push origin HEAD:refs/for/master'
 alias greb='git rebase origin/master'
