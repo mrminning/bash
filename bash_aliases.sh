@@ -30,6 +30,7 @@ alias gcoman='git commit --amend --no-edit'
 # Files in commit with the following id. Get commit id with glog
 alias gcomfiles='git diff-tree --no-commit-id --name-only -r '
 alias gdf='git diff'
+alias gdfs='git diff --staged'
 alias gfet='git fetch'
 alias glog=_glog
 alias gmer='git merge'
