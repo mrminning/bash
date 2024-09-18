@@ -24,6 +24,7 @@ alias gapp='git apply'
 alias gback='git ls-files --others --exclude-standard -z|xargs -0 tar rvf' # filename.tar
 alias gbr='git branch'
 alias gch='git checkout'
+alias gchm='git checkout master'
 alias gcom='git commit'
 alias gcoma='git commit --amend'
 alias gcoman='git commit --amend --no-edit'
@@ -70,7 +71,7 @@ if [ "$LINUXTYPE" == "macos" ]; then
     alias ls='ls -G'
 fi
 
-alias m='less'
+alias m='bat'
 alias mci='mvn clean install'
 alias mct='mvn -P component-tests verify'
 #alias mct='mvn verify -Pcomponent-tests -P \!update-tisp-dependencies,\!update-parent'
