@@ -24,7 +24,7 @@ alias gapp='git apply'
 alias gback='git ls-files --others --exclude-standard -z|xargs -0 tar rvf' # filename.tar
 alias gbr='git branch'
 alias gch='git checkout'
-alias gchm='git checkout master'
+alias gchm='git_checkout_default'
 alias gcom='git commit'
 alias gcoma='git commit --amend'
 alias gcoman='git commit --amend --no-edit'
@@ -163,6 +163,12 @@ function mcisr()
 
 function parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/^* \(.*\)/ (\1)/'
+}
+
+function git_checkout_default() {
+    # Determine the default branch
+    DEFAULT_BRANCH=$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')
+    git checkout $DEFAULT_BRANCH
 }
 
 function set-title() {
