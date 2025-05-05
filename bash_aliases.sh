@@ -99,6 +99,7 @@ alias nrsl='npm run start:local'
 alias nrt='npm run test'
 alias nrtj='npm run test:jest'
 alias obsidianbackups='python ~/projects/obsidianbackups/main.py'
+alias p='cd ~/projects'
 alias p3='/usr/local/bin/python3'
 alias pg='ps -ef|grep'
 alias pip=pip3
