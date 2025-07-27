@@ -6,6 +6,8 @@ alias ....='cd ../../..'
 alias aliasg='alias|grep'
 alias aptin="sudo apt install"
 alias aptup="sudo apt update && sudo apt upgrade -y"
+alias snapup="sudo snap refresh"
+alias flatup="flatpak update"
 alias artisan='php artisan'
 alias bashaliases='source ~/bash/bash_aliases.sh'
 alias bat='batcat'
@@ -113,6 +115,15 @@ alias tm-ls='tmux ls'
 alias tm-new='tmux new -s'
 alias wget='wget -c'
 
+function updateall() {
+    echo ":: APT ::::::::::::::"
+    aptup
+    echo ":: SNAP :::::::::::::"
+    snapup
+    echo ":: FLATPAK ::::::::::"
+    flatup
+    echo ":: DONE :::::::::::::"
+    }
 
 function bu() { cp -a "$1" "$1".bkp-`date +%y%m%dt%H%M%S`; }
 
