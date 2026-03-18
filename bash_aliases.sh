@@ -39,6 +39,7 @@ alias glog=_glog
 alias gmer='git merge'
 alias gpll='git pull --ff-only'
 alias gpllr='git pull --rebase'
+alias gprune=gitprune
 alias gpsh='git push'
 alias gpshf='git push --force-with-lease'
 alias gpshr='git push origin HEAD:refs/for/master'
@@ -149,6 +150,11 @@ function extract()
         echo "'$1' is not a valid file!"
     fi
 
+}
+
+function gitprune()
+{
+    git fetch --prune && git branch -vv | awk '/: gone]/{print $1}' | xargs -r git branch -D
 }
 
 function _glog()
